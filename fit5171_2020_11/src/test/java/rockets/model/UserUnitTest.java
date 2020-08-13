@@ -37,7 +37,7 @@ public class UserUnitTest {
 
     @DisplayName("should be a valid email")
     @ParameterizedTest
-    @ValueSource(strings = {"ycai", "ycai#.com"})
+    @ValueSource(strings = {"ycai", "ycai*.com"})
     public void shouldThrowExceptionWhenEmailIsNotValid(String email) {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> target.setEmail(email));
         assertEquals("email format is wrong", exception.getMessage());
